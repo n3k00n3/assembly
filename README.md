@@ -1,2 +1,5 @@
 # asm-study
-asm x86_64 codes
+
+This is a simple repo with my asm codes.
+
+
