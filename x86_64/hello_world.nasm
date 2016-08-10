@@ -24,6 +24,7 @@ _start:
     ;exit with status 0
     mov rax, 60
     xor rdi, rdi
+    syscall
 
 section .data
 
