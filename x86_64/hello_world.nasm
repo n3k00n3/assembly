@@ -12,7 +12,6 @@ main:
     ;prologue
     push rbp
     mov rbp, rsp
-    mov rsp, 0x20
 
     ;print the hello_world_label
     mov rax, 1
