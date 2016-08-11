@@ -1,13 +1,13 @@
-;------------------------------------------------------
-;           This is a simple Hello world!
-; nasm -f elf64 -o hello.o && ld hello.o -o HelloWorld
-;------------------------------------------------------
+;-------------------------------------------------------------------------
+;                     This is a simple Hello world!
+; nasm -f elf64 hello_wolrd.nasm -o hello.o && gcc hello.o -o HelloWorld
+;--------------------------------------------------------------------------
 
-global _start
+global main
 
 section .text
 
-_start:
+main:
 
     ;prologue
     push rbp
@@ -15,16 +15,16 @@ _start:
     mov rsp, 0x20
 
     ;print the hello_world_label
-    mov al, 1
+    mov rax, 1
     mov rdi, 1
     mov rsi, hello_world
-    mov dl, len
+    mov rdx, len
     syscall
 
-    ;exit with status 0
-    mov rax, 60
-    xor rdi, rdi
-    syscall
+    ;epilogue
+    mov rsp, rbp
+    pop rbp
+    ret
 
 section .data
 
