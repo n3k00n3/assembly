@@ -11,9 +11,6 @@ main:
     ;prologue
     push rbp
     mov rbp, rsp
-    jmp starting_loop
-
-starting_loop:
     mov rax, 0xa
 
 printMessage:
