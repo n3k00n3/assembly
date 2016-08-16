@@ -1,0 +1,6 @@
+;--------------------------------------------------------------
+;  This code is to reverse the string and to convert to hex
+;                       Using ruby lang
+;--------------------------------------------------------------
+
+"<string>\n".reverse.each_byte { |x| print  x.to_s(16) }
