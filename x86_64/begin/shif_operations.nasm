@@ -24,6 +24,12 @@ main:
     shr ax, 0x1
     shr ax, 0x2
 
+    ;rotate shifts
+    mov ax, 0xa
+    rol ax, 0x1
+    rol ax, 0x1
+    ror ax, 0x2
+
     mov rsp, rbp
     pop rbp
     ret
