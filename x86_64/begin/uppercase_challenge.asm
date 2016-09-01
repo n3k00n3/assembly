@@ -16,11 +16,11 @@ main:
     push rbp
     mov rbp, rsp
 
-    read: mov rax, 0x3
-          mov rbx, 0x0          ;stdin
-          mov rcx, buffer
+    read: mov rax, 0x0
+          mov rdi, 0x0          ;stdin
+          mov rsi, buffer
           mov rdx, 0x1          ;Only one chr
-          int 80h
+          syscall
 
           cmp rax, 0x0
           je exit
@@ -32,11 +32,11 @@ main:
 
           sub byte [buffer], 0x20
 
-    write: mov rax, 0x4
-           mov rbx, 0x1
-           mov ecx, buffer
-           mov edx, 0x1
-           int 80h
+    write: mov rax, 0x1
+           mov rdi, 0x1
+           mov rsi, buffer
+           mov rdx, 0x1
+           syscall
            jmp read
 
     exit:
