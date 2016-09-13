@@ -21,11 +21,3 @@ main:
     pop rbp
     ret
 
-section .data
-    
-    snippet db "KANGAROO"
-
-
-section .bss
-;
-; uninitialized dais put in the bss segment
