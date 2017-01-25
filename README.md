@@ -1,9 +1,10 @@
 # asm-study
 
 This is a simple repo with my asm codes.
+
 I am saving some pieces of codes to understand how its works, some programs and shellcods
 
-I am not a ASM guru, I am a beginner yet, so if you find mistakes, please show me that.
+I am not a nASM Guru. I am a beginner yet, so if you find mistakes, please show me that.
 
 ## how to compile the codes
 
@@ -24,5 +25,10 @@ gcc file.o -o file
 ```
 gdb file -q
 
+```
+To see the registers use this
+
+```
+layout regs
 ```
 
