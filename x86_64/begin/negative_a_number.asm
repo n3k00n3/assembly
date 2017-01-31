@@ -1,7 +1,3 @@
-;---------------------------------------------------------------------
-;               This a simple skeleton of asm code
-; This file is a skeleton that can be used to start assembly programs.
-;---------------------------------------------------------------------
 
 global main
 
