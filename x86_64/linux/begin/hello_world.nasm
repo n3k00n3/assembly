@@ -1,6 +1,5 @@
 ;-------------------------------------------------------------------------
 ;                     This is a simple Hello world!
-; nasm -f elf64 hello_wolrd.nasm -o hello.o && gcc hello.o -o HelloWorld
 ;--------------------------------------------------------------------------
 
 global main

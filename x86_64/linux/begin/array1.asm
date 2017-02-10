@@ -1,3 +1,6 @@
+;-----------------------------------------
+; This code is a simple array in asm
+;-----------------------------------------
 
 section .data
     a: db "abcd", 0xa

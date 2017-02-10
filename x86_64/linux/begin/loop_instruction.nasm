@@ -1,6 +1,5 @@
 ;-------------------------------------------------------------------------------
 ;                        :: Using the instruction loop ::
-;nasm -f elf64 loop_intruction.nasm -o loop_ins.o && gcc loop_ins.o -o loop_ins
 ;-------------------------------------------------------------------------------
 
 global main
