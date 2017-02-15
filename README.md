@@ -38,28 +38,30 @@ layout regs
 ```
 ## Conventions
 
- syscall numbers: /usr/src/linux/include/asm-x86_64/unistd.h
- kernel parameters:
- r9; 6th param
- r8; 5th param
- r10; 4th param
- rdx; 3rd param
- rsi; 2nd param
- rdi; 1st param
- rax; syscall_number
- syscall
+###syscall numbers: /usr/src/linux/include/asm-x86_64/unistd.h
+ 1. kernel parameters:
+ 2. r9; 6th param
+ 3. r8; 5th param
+ 4. r10; 4th param
+ 5. rdx; 3rd param
+ 6. rsi; 2nd param
+ 7. rdi; 1st param
+ 8. rax; syscall_number
+ 9. syscall
 
- return register:
- rax; 1st
- rdx; 2nd
+###return register:
 
- preserved accross function call: RBX RBP ESP R12 R13 R14 R15
+ 1. rax; 1st 
+ 2. rdx; 2nd
 
- function parameter (when linked with external libraries):
- r9; 6th param
- r8; 5th param
- rcx; 4th param
- rdx; 3rd param
- rsi; 2nd param
- rdi; 1st param
- call library
+### preserved accross function call: RBX RBP ESP R12 R13 R14 R15
+
+### function parameter (when linked with external libraries):
+ 
+ 1. r9; 6th param
+ 2. r8; 5th param
+ 3. rcx; 4th param
+ 4. rdx; 3rd param
+ 5. rsi; 2nd param
+ 6. rdi; 1st param
+ 7. call library
