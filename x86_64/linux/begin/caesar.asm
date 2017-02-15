@@ -35,7 +35,7 @@ caesar:
     cmp byte [buffer], 0x7a
     ja write
 
-    add byte [buffer], dword [key]
+    add byte [buffer], 0x1
 
 write:
     mov rax, 0x1
