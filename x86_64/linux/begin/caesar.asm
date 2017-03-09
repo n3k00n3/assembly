@@ -29,7 +29,7 @@ readInput:
     je exit
 
 caesar:
-    
+
     cmp byte [buffer], 0x41
     jb write
     cmp byte [buffer], 0x7a
