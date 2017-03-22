@@ -11,8 +11,9 @@ section .data
 
 section .text
   global main
+  global caesar
 
-main:
+  main:
   push rbp
   mov rbp, rsp
   sub rsp, 0x20 
@@ -26,19 +27,12 @@ strtoint:
   mov rax, [rsi+0x10]
   mov rax, [rax]
   sub al, 0x30
-  mov [rbp-0x4], al
+  xor rdx, rdx
+  mov dl, al
     
   mov rdi, [rsi+0x08]
   call stringlen 
-  jmp caesar
-
-  ;print message
-  mov rax, 0x01
-  mov rdi, 0x01
-  mov rsi, [rsi]
-  mov rdx, 0x04
-  syscall
-
+  call caesar
   jmp exit
 
 usage:
@@ -53,7 +47,6 @@ usage:
 stringlen:
   push rbp
   mov  rbp, rsp
-  sub  rsp, 0x8
   xor rcx, rcx
 
   .nextchar:
@@ -69,10 +62,11 @@ stringlen:
     ret
          
 caesar:
+  push rbp
+  mov rbp, rsp 
   xor rcx, rcx
   mov rsi, rdi
   dec rax
-  mov rdx, [rbp-0x4]
   
   .addkey:
     cmp byte [rsi+rcx], 0x41
@@ -82,16 +76,19 @@ caesar:
     add byte [rsi+rcx], dl
   .nextelement:
     cmp rcx, rax
-    je printmessage
+    je .printmessage
     inc rcx
     jmp .addkey
 
-printmessage:
-  inc rcx
-  mov rax, 0x1
-  mov rdi, 0x1
-  mov rdx, rcx
-  syscall 
+  .printmessage:
+    inc rcx
+    mov rax, 0x1
+    mov rdi, 0x1
+    mov rdx, rcx
+    syscall 
+
+    leave
+    ret
 
 exit:
   mov rsp, rbp
